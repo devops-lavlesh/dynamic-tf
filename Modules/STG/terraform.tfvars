@@ -6,6 +6,8 @@ storage_accounts = {
     account_tier             = "Standard"
     account_replication_type = "LRS"
     is_hns_enabled           = true
+    account_kind             = "BlobStorage"
+    
   },
   "stgaccount2" = {
     name                     = "dronestg2"

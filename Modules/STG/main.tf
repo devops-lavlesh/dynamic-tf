@@ -6,6 +6,7 @@ variable "storage_accounts" {
     location                        = string
     account_tier                    = string
     account_replication_type        = string
+    account_kind                    = optional(string)
     public_network_access_enabled   = optional(bool, false)
     is_hns_enabled                  = optional(bool, false)
     nfsv3_enabled                   = optional(bool, false)
@@ -25,6 +26,7 @@ resource "azurerm_storage_account" "stgs" {
   resource_group_name             = each.value.resource_group_name
   location                        = each.value.location
   account_tier                    = each.value.account_tier
+  account_kind                    = each.value.account_kind
   account_replication_type        = each.value.account_replication_type
   public_network_access_enabled   = each.value.public_network_access_enabled
   is_hns_enabled                  = each.value.is_hns_enabled
